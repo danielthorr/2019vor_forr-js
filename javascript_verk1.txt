@@ -1,0 +1,101 @@
+Verkefni 1 - 5% JavaScript. Vor 2019
+
+1. Hvað er null og undefined?
+	Það eru týpur sem hafa ekki verið skilgreindar með gildi.
+
+2. Hvað gerir 'use strict' í JavaScript kóða?
+	Þá breytir þýðandinn ekkert kóðanum þínum. Ef það kemur upp villa sendir hann villuskilaboð.
+
+3. Hver er munurinn á let, var og const?
+	let hefur block scope - const er líka block scope en er hins vegar read-only - var hefur function scope
+	
+4. Endurskrifaðu eftirfarandi kóða með for lykkjunni.
+
+let x = 9;
+while (x >= 1) {
+	console.log("hello " + x);
+	x = x - 1;
+}
+
+	for (let x = 9; x >= 1; x--){
+		console.log("hello " + x);
+	}
+
+5. Skilgreindu sama fallið á þrjá mismunandi vegu.
+	
+	function (){
+		c = 1 + 2;
+	}
+	
+	function sum() {
+		c = 1 + 2;
+	}
+	
+	let sum = function(){
+		c = 1 + 2;
+	}
+
+6. Útskýrðu hvað eftirfarandi kóði gerir, hvað gera svigarnir?
+(function() { alert('Hello World'); })();
+
+	Kóðinn birtir 'Hello world' í "alert" glugga þegar kóðinn er keyrður.
+	Svigarnir utan um fallið gera það að verkum að fallið er keyrt um leið og það er lesið. Það er sjálfkeyrandi fall.
+
+7. Af hverju birtist 1 en ekki 10?
+Í hvaða röð er kóðinn keyrður í raun eftir að JS þýðandinn (e. interpreter) er búinn að fá
+hann til sín? Raðaðu kóðanum rétt fyrir JS þýðandann.
+"use strict";
+let a = 1;
+function b() {
+	a = 10;
+	return;
+	function a() {}
+}
+b();
+console.log(a);
+
+	Vegna þess að function a(){} er fært upp að byrjun "function-innar".
+	Koðinn er i raun keyrður svona:
+	
+	let a;
+	function b() {
+		function a(){}
+		a = 10; (koðinn tulkar a-ið her sem function-ið her fyrir ofan)
+		return;
+	}
+	a = 1;
+	b();
+	console.log(a);
+
+	
+
+8. Leystu lið 20 í Lesson 6 (Arrays) á Udacity https://classroom.udacity.com/courses/ud803
+
+	test.forEach(function(t){
+	   if (t % 3 === 0)
+	   {
+		   console.log(t + 100);
+	   }
+	   else
+	   {
+		   console.log(t);
+	   }
+	});
+	
+9. Leystu lið 22 í Lesson 6 (Arrays) á Udacity https://classroom.udacity.com/courses/ud803
+
+	let totals = bills.map(function(bill){
+		return bill*1.15;
+	});
+
+10. Skrifaðu forrit í JavaScript sem sprengir staflan (stack overflow).
+
+	function a(){ b(); }
+	function b(){ a(); }
+	a();
+
+Skil á verkefni
+Skilaðu á Innu Github slóð með kóða, svörum og lausnum.
+Námsmat:
+Gefið er full fyrir rétt og fullnægjandi svar og skýringu þegar það á við, ekkert ef svar eða skýring
+er ábótavant.
