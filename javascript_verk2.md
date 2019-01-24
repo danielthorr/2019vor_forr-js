@@ -1,6 +1,14 @@
 Verkefni 2 - Objects (5%)
 1. Búðu til object með upplýsingar um þig; nafn, kennitala, heimilsfang, heimasími og gsm.
 
+  ```let me = {
+    name: {firstName: "Jón", middleName: "J", lastName: "Jónsson"},
+    kennitala: "0102427789",
+    heimilisfang: "Street Str 001",
+    heimasími: "N/A - Get with the times",
+    gsm: ["354 1234567", "354 9876543"]
+  }```
+
 2. Notaðu for…in lykkjuna til að birta öll eigindin (e. property) ásamt gildum í objectinu í lið 1.
 
 3. Bættu við aðferð í objectið sem þú gerðir í lið 1. Aðferðin á að skila streng sem inniheldur
@@ -9,12 +17,12 @@ nafn og aldur.
 4. Prentaðu út með console.log() Nonni.
 
 ```let family = {
-"parents":
-{
-"fathers": [{"name":"Jakob"},{"name":"Nonni"}],
-"mothers":[{"name":"Rakel"},{"name":"Sara"}]
-}
- };
+  "parents":
+  {
+    "fathers": [{"name":"Jakob"},{"name":"Nonni"}],
+    "mothers":[{"name":"Rakel"},{"name":"Sara"}]
+  }
+};
  
  ```
  
@@ -28,14 +36,14 @@ nafn og aldur.
 
 9. Útskýrðu hvað eftirfarandi kóði gerir.
 
-let user = { name: "John" };
+let user = { name: "John" };  
 let admin = user;
 
 10. Afhverju virkar eftirfarandi?
 
 const user = {
  name: "John"
-};
+};  
 user.age = 25;
 alert(user.age); // 25
 
