@@ -1,5 +1,5 @@
 Verkefni 2 - Objects (5%)
-1. Búðu til object með upplýsingar um þig; nafn, kennitala, heimilsfang, heimasími og gsm.
+### 1. Búðu til object með upplýsingar um þig; nafn, kennitala, heimilsfang, heimasími og gsm.
 
 ```
 let me = {
@@ -12,7 +12,7 @@ let me = {
 }
 ```
 
-2. Notaðu for…in lykkjuna til að birta öll eigindin (e. property) ásamt gildum í objectinu í lið 1.
+### 2. Notaðu for…in lykkjuna til að birta öll eigindin (e. property) ásamt gildum í objectinu í lið 1.
 
 ```
 //Notum "me" sem ég bjó til í dæmi 1
@@ -30,11 +30,11 @@ for (let prop in me){
 }
 ```
 
-3. Bættu við aðferð í objectið sem þú gerðir í lið 1. Aðferðin á að skila streng sem inniheldur
-nafn og aldur.
+### 3. Bættu við aðferð í objectið sem þú gerðir í lið 1. Aðferðin á að skila streng sem inniheldur nafn og aldur.  
+
     ```me.showInfo = function(){ return this.name.firstName + " " + this.age }```
 
-4. Prentaðu út með console.log() Nonni.
+### 4. Prentaðu út með console.log() Nonni.
 
 ```
     let family = {
@@ -49,7 +49,7 @@ nafn og aldur.
     console.log(family.parents.fathers[1].name);
 ```
  
-5. Leystu lið 8 í lesson 7 - Objects á Udacity
+### 5. Leystu lið 8 í lesson 7 - Objects á Udacity
 
 ```
     let breakfast = {
@@ -59,7 +59,7 @@ nafn og aldur.
     }
 ```
 
-6. Leystu lið 9 í lesson 7 - Objects á Udacity
+### 6. Leystu lið 9 í lesson 7 - Objects á Udacity
 
 ```
     var savingsAccount = {
@@ -77,7 +77,7 @@ nafn og aldur.
 console.log(savingsAccount.printAccountSummary());
 ```
 
-7. Leystu lið 12 í lesson 7 - Objects á Udacity
+### 7. Leystu lið 12 í lesson 7 - Objects á Udacity
 
 ```
     let donuts = [
@@ -93,16 +93,16 @@ console.log(savingsAccount.printAccountSummary());
     });
 ```
 
-8. Eru öll eigindi (e. properties) í sömu röð og þeim var bætt í object, rökstuddu?
+### 8. Eru öll eigindi (e. properties) í sömu röð og þeim var bætt í object, rökstuddu?
 
-    - Það virðist vera að Javascript raði upp `canonical numeric strings` í talnaröð, þar sem lægsta talan er fyrst - eftir það raðar það `string` keyed `properties` í þeirri röð sem því var bætt inn og seinast `symbol` keyed `properties` í þeirri röð sem þeim var bætt inn.
-    - (Ég datt ofan í the rabbit hole og ég týndist þar í margar klukkustundir, ég vona að ég hafi skilið eitthvað af þessu rétt).
+  - Það virðist vera að Javascript raði upp `canonical numeric strings` í talnaröð, þar sem lægsta talan er fyrst - eftir það raðar það `string`-keyed `properties` í þeirri röð sem því var bætt inn og seinast `symbol`-keyed `properties` í þeirri röð sem þeim var bætt inn.
+    - (Ég datt ofan í "the rabbit hole" og ég týndist þar í margar klukkustundir, ég vona að ég hafi skilið eitthvað af þessu rétt).
     - Ég fann ekkert um það hvernig `javascript` kallar í eða notfærir sér `internal methods` eða `internal slots` (frá `ecmascript`) en það sem ég skildi útfrá `ecmascript 6` þá eru `properties` raðað í `object` í þeirri röð sem þeim var bætt við í `object`-ið jafnvel þó svo að `javascript` virðist ekki hegða sér þannig.  
     - Þegar þú kallar á `aðferð` eins og `for-in`, þá sýnist mér að `ecmascript` kóðinn `destructure`-i `object`-ið, athugar hvort að `strengurinn` fyrir `property name` sé `canonical numeric string` (með aðferðinni `CanonicalNumericIndexString()` sem skilar `boolean`). 
     - Kóðinn flokkar þá fyrst þau `property` sem eru `canonical numeric strings`, síðan öll önnur `property` heiti sem eru `strengir` eftir þeirri röð sem þeim var bætt inn og síðan öllum `properties` sem eru `symbols` í þeirri röð sem þeim var bætt inn.  
-    - Hins vegar er það ekki endilega eins með öllum `aðferðum` hvort að því sé raðað í þessari röð eða ekki. - Sérstaklega þá hvort að aðferðin kallar í `internal method` á `property-inu` sem kallast `[[OwnPropertyKeys()]]`. 
+    - Hins vegar er það ekki endilega eins með öllum `aðferðum` hvort að því sé raðað í þessari röð eða ekki. - Sérstaklega þá hvort að aðferðin kallar í `internal method` á `property`-inu sem kallast `[[OwnPropertyKeys()]]`. 
 
-9. Útskýrðu hvað eftirfarandi kóði gerir.
+### 9. Útskýrðu hvað eftirfarandi kóði gerir.
 
 ```
     let user = { name: "John" };  
@@ -142,7 +142,7 @@ console.log(savingsAccount.printAccountSummary());
   console.log(user);
 ```
 
-10. Afhverju virkar eftirfarandi?
+### 10. Afhverju virkar eftirfarandi?
 
 ```
     const user = {
