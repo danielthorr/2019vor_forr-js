@@ -71,7 +71,8 @@
   f1.setLife = function() { this.life++; }
 ```
 ### 5. Hver er munurinn á `Class` og `Prototype`?
-
+  - Prototype er innbyggt `attribute` í `ecmascript` sem `objects` "reference-a" sem `parent`.
+  - `class`, hins vegar, er í raun "syntactical sugar" í javascript sem þýðir að það er ekki til neitt `object` sem heitir "class" eða neitt svoleiðis. `class` er bara aðferð til þess að búa til javascript `objects` sem einfaldar aðferðina til þess að búa til `object-oriented` kóða, og þá sérstaklega fyrir aðila sem eru að koma úr öðrum forritunarmálum þar sem meiri áhersla er lögð á `klasa`.
 Námsmat og skil.
 Skilaðu github slóð með lausnum á Innu.
 Gefið er full fyrir rétt og fullnægjandi lausn eða svar, hálft ef lausn eða svar er ábótavant.
