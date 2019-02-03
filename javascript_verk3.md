@@ -8,16 +8,22 @@
 ```
   // This function works as a constructor for the Book prototype
   function Book(isbn) { 
-    this.isbn = isbn; // Here we assign a "class variable" to the instanced child object. And we pass in the value from the "new Book(isbn)" parameter.
-    // the "this" keyword points to whatever object was instanced along with it. That is, for each instance of an object, "this" points to that specific object.
+    // Here we assign a "class variable" to the instanced child object.
+    // And we pass in the value from the "new Book(isbn)" parameter.
+    this.isbn = isbn; 
+    // the "this" keyword points to whatever object was instanced along with it. 
+    // That is, for each instance of an object, "this" points to that specific object.
   }
 
   // here we assign a function to the Book prototype that its' children can access.
   Book.prototype.getIsbn = function () {
-    return "Isbn is " + this.isbn; // Simply returns the object's isbn value (see "this" keyword above)
+    // Simply returns the object's isbn value (see "this" keyword above)
+    return "Isbn is " + this.isbn; 
   };
 
-  // Instantiate a new object whose isbn is "12345", which gets passed on to our "constructor function", which then assigns it to a "class variable" called isbn.
+  // Instantiate a new object whose isbn is "12345", 
+  // which gets passed on to our "constructor function", 
+  // and then assigns it to a "class variable" called isbn.
   let bookObject = new Book(12345);
 
 ```
