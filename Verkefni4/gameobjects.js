@@ -48,11 +48,11 @@ class RectObject extends GameObject
         }
     }
     draw() {
-        ctx.beginPath();
-        ctx.fillStyle = this.color;
-        ctx.rect(this.posX, this.posY, this.width, this.height);
-        ctx.fill();
-        ctx.stroke();
+        canvas.ctx.beginPath();
+        canvas.ctx.fillStyle = this.color;
+        canvas.ctx.rect(this.posX, this.posY, this.width, this.height);
+        canvas.ctx.fill();
+        canvas.ctx.stroke();
     }
 }
 
@@ -64,7 +64,7 @@ class Paddle extends RectObject
         // Við bætum við hröðun (acc = acceleration), hraða og hámarkshraða
         this.acc = 2;
         this.speed = 0;
-        this.maxSpeed = 8;
+        this.maxSpeed = 6;
         // Eiginleiki sem segir til um hvort brettið megi færi sig til vinstri og/eða hægri
         this.canMove = { left: true, right: true };
     }
@@ -73,7 +73,7 @@ class Paddle extends RectObject
         // Athugum hvort brettið sé komið út í enda,
         // annaðhvort vinstra- eða hægra megin
         this.canMove.left  = (this.posX > 0) ? true : false;
-        this.canMove.right  = (this.posX + this.width < width) ? true : false;
+        this.canMove.right  = (this.posX + this.width < canvas.width) ? true : false;
 
         // Ef notandi er að ýta á vinstri eða hægri takka
         if (Inputs.left || Inputs.right) {
@@ -165,30 +165,6 @@ class Brick extends RectObject
     }
 }
 
-class BrickHandler
-{
-    constructor() {
-        this.bricks = [];
-    }
-    makeBricks() {
-        let brickModel = new Brick();
-        let padding = { before: 12, between: 3 };
-        let lvlDesign = lvlManager.level[ lvlManager.currentLevel ];
-        for (let column = 0; column < lvlDesign.length; column++) {
-            for (let row = 0; row < lvlDesign[column].length; row++) {
-                let posX = padding.before + row * (brickModel.width + padding.between);
-                let posY = padding.before + column * (brickModel.height + padding.between);
-                let brick = new Brick(
-                    posX, posY, 
-                    { name: "brick" + column + "," + row, collision: true }, 
-                    "red"
-                    );
-                this.bricks.push(brick);
-            }
-        }
-    }
-}
-
 // Við búum bara til einn klasa fyrir boltann og erfum frá GameObject
 class Ball extends GameObject
 {
@@ -208,11 +184,11 @@ class Ball extends GameObject
     }
 
     draw() {
-        ctx.beginPath();
-        ctx.fillStyle = this.color;
-        ctx.arc(this.posX, this.posY, this.radius, 0, Math.PI*2, false);
-        ctx.fill();
-        ctx.beginPath();
+        canvas.ctx.beginPath();
+        canvas.ctx.fillStyle = this.color;
+        canvas.ctx.arc(this.posX, this.posY, this.radius, 0, Math.PI*2, false);
+        canvas.ctx.fill();
+        canvas.ctx.beginPath();
     }
 
     // Notum litla aðferð hér til að bæta við hröðun á boltann. Við athugum hvort boltinn sé
@@ -242,11 +218,11 @@ class Ball extends GameObject
         // sé kominn út í enda á leikjasvæðinu og uppfærum þá áttina sem hann snýr samkvæmt því
         // Hér er líka aðferðin til þess að hraða á boltanum af því að við viljum
         // bara hraða á boltanum ef hann rekst í vegg.
-        if ((this.posX + this.radius) >= width || (this.posX - this.radius) <= 0) {
+        if ((this.posX + this.radius) >= canvas.width || (this.posX - this.radius) <= 0) {
             this.velX = -this.velX;
             this.accelerate();
         }
-        if ((this.posY + this.radius) >= height || (this.posY - this.radius) <= 0) {
+        if ((this.posY + this.radius) >= canvas.height || (this.posY - this.radius) <= 0) {
             this.velY = -this.velY;
             this.accelerate();
         }

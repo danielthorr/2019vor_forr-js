@@ -6,7 +6,9 @@ class Inputs
         this.right = false;
     }
 }
+
 new Inputs();
+
 class InputHandler
 {
     constructor(){

@@ -1,19 +1,20 @@
 "use strict";
 //Grab what we need from external files first
 //import Tools from "/Verkefni4/tools";
-let tools = new Tools();
 new InputHandler();
-new Brick();
 // setup canvas
-let canvas = document.querySelector('canvas');
-let ctx = canvas.getContext('2d');
 
-let width = canvas.width = "780";
-let height = canvas.height = "600";
+let canvas = {
+    canvasElement: document.querySelector('canvas')
+}
+canvas = {
+    ctx: canvas.canvasElement.getContext('2d'),
+    width: canvas.canvasElement.width = "780",
+    height: canvas.canvasElement.height = "600"
+}
 
-let bricks = [];
 
-let paddle = new Paddle(((width-100)/2), (height-25), { name: "player", collision: true });
+let paddle = new Paddle(((canvas.width-100)/2), (canvas.height-25), { name: "player", collision: true });
 paddle.draw();
 
 let brickHandler = new BrickHandler();
@@ -27,8 +28,8 @@ let ball = new Ball(200, 400, {name: "ball"}, gameObjects);
 
 function loop() {
 
-    ctx.fillStyle = "rgba(0, 0, 0, 1.00)";
-    ctx.fillRect(0, 0, width, height);
+    canvas.ctx.fillStyle = "rgba(0, 0, 0, 1.00)";
+    canvas.ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ball.collisionDetection();
 
