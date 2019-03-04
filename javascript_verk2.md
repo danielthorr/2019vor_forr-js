@@ -29,6 +29,7 @@ nafn og aldur.
 9. Útskýrðu hvað eftirfarandi kóði gerir.
 
 let user = { name: "John" };
+
 let admin = user;
 
 10. Afhverju virkar eftirfarandi?
@@ -36,6 +37,7 @@ let admin = user;
 const user = {
  name: "John"
 };
+
 user.age = 25;
 alert(user.age); // 25
 
