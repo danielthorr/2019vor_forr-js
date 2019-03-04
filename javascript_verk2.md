@@ -46,11 +46,6 @@ for (let prop in me){
     };
 
 
-<<<<<<< HEAD
-let user = { name: "John" };
-
-let admin = user;
-=======
     console.log(family.parents.fathers[1].name);
 ```
  
@@ -63,7 +58,6 @@ let admin = user;
         ingredients: ["eggs", "sausage", "toast", "hashbrowns", "pancakes"]
     }
 ```
->>>>>>> 04a209afdac1009a55a67d709dda5410af14a787
 
 ### 6. Leystu lið 9 í lesson 7 - Objects á Udacity
 
@@ -80,10 +74,6 @@ let admin = user;
     }
 };
 
-<<<<<<< HEAD
-user.age = 25;
-alert(user.age); // 25
-=======
 console.log(savingsAccount.printAccountSummary());
 ```
 
@@ -164,7 +154,6 @@ console.log(savingsAccount.printAccountSummary());
 
   - `const` breytur eru kallaðar `immutable` sem þýðir það að þú verður að gefa þeim gildi um leið og þær eru búnar til og það er ekki hægt að breyta gildinu á þeim. Hins vegar eru breyturnar sjálfar bara `immutable` í `ecmascript` en ekki gildin sem breyturnar benda á (breyturnar innihalda `reference` á gildið, þetta `reference` er immutable). 
   - Þ.e.a.s. þegar þú býrð til `object` af týpunni  `const` er breytan að "benda" á `object`-ið sjálft, en ekki `property`-in sem `object`-ið inniheldur. Þess vegna er hægt að breyta og bæta við `properties` á `const object`s.
->>>>>>> 04a209afdac1009a55a67d709dda5410af14a787
 
 Námsmat og skil:
 Gefið er fullt fyrir rétt og fullnægjandi svar og skýringu þegar það á við, hálft ef svar eða skýring
