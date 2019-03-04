@@ -266,6 +266,7 @@ class Ball extends GameObject
 
             /*
                 Touch breyturnar finna punktinn á "obj" sem er næst miðju hringsins.
+                https://yal.cc/rectangle-circle-intersection-test/
 
                 Fyrir touchX:
                 Til þess að útskýra þessa aðferð er best að byrja á Math.min() hlutanum
