@@ -55,3 +55,11 @@
   * Við erum með aðal lykkjuna hér. Lykkjan gerir...
     * Við köllum í aðferðir boltans til þess að framkvæma "collision detection"
     * Við köllum í aðferðir allra `gameobjects` til þess að teikna þá og við uppfærum stöðu þeirra.
+    
+## References & inspiraton    
+* `input.js`:		kom að miklu leiti út frá þessu myndbandi: [Intro to Game Development with JavaScript - Full Tutorial](https://www.youtube.com/watch?v=3EMxBkqC4z0&t=2490s). Það var þetta myndband sem lét mig detta í hug að gera svona "breakout" leik.
+* `managers.js`: 	kom frá sama myndbandi og ég benti á hér að ofan nema ég breytti því og hafði hugsað mér að bæta fleiri hlutum við, t.d. mismunandi "bricks" sem hefðu mismunandi eiginleika og fleiri "levels" sem yrðu sótt í `LevelManager` klasann. `BrickHandler` klasinn kom út frá því að endurhanna eitthvað nokkrum sinnum og ég man hreinlega ekki hvaðan það kom upprunalega.
+* `gameobjects.js`: Ég notaði wall collision frá þessari mdn æfingu [mdn-Object building practice](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_building_practice). Ég notaði mikið af mismunandi aðferðum og skoðaði endalaust af vefsíðum og myndböndum fyrir aðferðina `collisionDetection()` á `Ball` klasanum. Hluti af því kom frá youtube myndbandinu sem ég talaði um hér efst en það sem endaði á því að leysa collision vandamálið fyrir mig var þessi grein [Rectangle-circle intersection test](https://yal.cc/rectangle-circle-intersection-test/)
+* `main.j`s: 		upprunalega setti ég það upp eftir mdn æfingunni sem ég benti á áðan [mdn-Object building practice](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_building_practice) en restin kom saman annaðhvort frá mörgum mismunandi stöðum eða hefur breyst bara í gegnum debug og testing.
+
+Það er eflaust eitthvað sem ég er að gleyma hér en ég myndi segja að meirihlutinn af þessu hafi komið frá sjálfum mér með þetta hér fyrir ofan sem innblástur eða notað til þess að hjálpa mér að fá þetta allt saman til þess að virka.
