@@ -1,0 +1,4 @@
+1. skoða dynamic filtering array (chapter 12: javascriptbook.com)
+
+ * Breyttu töflunni þannig að þú ert með dálkana: nafn, skór og dagsetning og notaðu eigin gögn sem object í fylki (5 færslur)
+ * Breyttu jQuery kóðanum í javascript þar sem þú getur
