@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+
+  <audio data-key="65" src="sounds/clap.wav"></audio>
+  <audio data-key="83" src="sounds/hihat.wav"></audio>
+  <audio data-key="68" src="sounds/kick.wav"></audio>
+  <audio data-key="70" src="sounds/openhat.wav"></audio>
+  <audio data-key="71" src="sounds/boom.wav"></audio>
+  <audio data-key="72" src="sounds/ride.wav"></audio>
+  <audio data-key="74" src="sounds/snare.wav"></audio>
+  <audio data-key="75" src="sounds/tom.wav"></audio>
+  <audio data-key="76" src="sounds/tink.wav"></audio>
+
+<script>
+    // Ég nennti ekki að ná í sounds möppuna, mér fannst það ekki skipta máli
+
+    // Funtions sem eru kölluð af event listeners fá sérstakan object sem kallast event
+    // event inniheldur margar upplýsingar um þann atburð sem trigger-aði event-ið.
+  function removeTransition(e) {
+    // Ef elementið sem trigger-aði þetta fall hefur ekki propertyName 'transform'
+    // þá viljum við ekkert vinna með það og förum til baka.
+    if (e.propertyName !== 'transform') return;
+    // Annars tökum við í burtu klasann "playing" og þá fáum við transition til baka
+    e.target.classList.remove('playing');
+  }
+
+  function playSound(e) {
+    // Við notum event.keyCode til þess að finna út hvaða takka notandi ýtti á
+    // með þær upplýsingar getum við leitað í skjalinu af þeim element-um sem 
+    // hafa það keycode í data-key attribute. Við notum css attribute selector
+    // til þess að finna hvaða element það er.
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    
+    if (!audio) return;
+
+    // Hér bætum við við klasanum 'playing' á element-ið sem við fundum hér að ofan
+    key.classList.add('playing');
+    // Við notum audio element-ið sem við fundum að ofan.
+    // Endursetjum hljóðklippuna á byrjunarreit
+    audio.currentTime = 0;
+    // Svo spilum við hljóðið
+    audio.play();
+  }
+
+  // Við búum til array frá öllum HTML element-um sem innihalda klasann "key".
+  // Mér skilst að við notum Array.from() til þess að breyta því úr nodelist yfir í array
+  const keys = Array.from(document.querySelectorAll('.key'));
+  // Við bætum við "transitionend" event listener þannig að þegar eitthvað transition 
+  // hefur lokið sínu transition ferli köllum við á removeTransition() fallið.
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+  //Við búum til event listener sem fylgist með öllum 'keydown' events,
+  // þ.e.a.s. hverjum takka sem notandi ýtir á og keyrum fallið playSound()
+  window.addEventListener('keydown', playSound);
+</script>
+
+
+</body>
+</html>
