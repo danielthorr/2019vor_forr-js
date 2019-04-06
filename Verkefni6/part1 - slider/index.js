@@ -46,25 +46,21 @@ function create(el, applyParent = false, parent=body) {
 
 /****** Create a wrapper around the whole project area ******/
 let mainWrapper = create("div", true);
-mainWrapper.style.cssText = "width:400px; margin: 0 auto;";
+mainWrapper.classList.add("mainWrapper");
 
 /****** Create the element that will be used as the slider ******/
 let range = create("div", true, mainWrapper);
-range.style.margin = "0 auto 40px";
+range.classList.add("range");
 
 /****** Make the labels to display the handle values ******/
 let valLabelWrapper = create("div", true, mainWrapper);
-valLabelWrapper.style.cssText = 
-    "display:flex; justify-content:space-between;"+
-    "margin: 0 auto;";
+valLabelWrapper.classList.add("valLabelWrapper");
 
 let valLabelLow = create("div", true, valLabelWrapper);
 let valLabelHigh = create("div", true, valLabelWrapper);
 
-let valLabelStyle = 
-    "padding:2px 10px; border: 1px solid black; margin:0;";
-valLabelLow.style.cssText = valLabelStyle;
-valLabelHigh.style.cssText = valLabelStyle;
+valLabelLow.classList.add("valLabel");
+valLabelHigh.classList.add("valLabel");
 
 /****** Make the unordered list and list items ******/
 let listEl = create("ul", true, mainWrapper);
@@ -85,10 +81,7 @@ let listItems = scores.map((score) => {
     // This is completely optional, I just wanted to make it look nice
     // so I created a container for the name and score elements
     let innerContainer = create("div", true, li);
-    innerContainer.style.cssText = 
-        "display:flex;justify-content:space-between;"+
-        "margin:0 auto; border-bottom: 1px solid black;"+
-        "font-size: 18px;";
+    
     // The score elements are placed in seperate span elements
     // so flexbox can space them out to opposite ends of the container
     let nameDisplay = create("span", true, innerContainer);
