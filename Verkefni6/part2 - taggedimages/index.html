@@ -3,6 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Verkefni 6 - Part 2</title>
+    <style>
+      body { margin:0; padding:0; }
+      .mainWrapper { width:95%; border-top: 30px solid gray; margin:0 auto;}
+      .buttonArea { width: 100%; display:flex; justify-content: center; 
+          border: 2px solid black; box-sizing:border-box; flex-wrap:wrap;
+          background-color: rgb(210, 222, 230); }
+      .tagButton { margin: 5px; padding:5px; border: 1px solid black;
+          border-radius: 5px; background-color: rgb(238, 248, 253); 
+          cursor:pointer; user-select:none;}
+      .tagButton:hover { background-color: rgb(211, 239, 250); }
+      .tagButton.active { background-color: rgb(117, 181, 253); }
+      .imageArea {width: 100%; display:flex; flex-wrap:wrap; 
+          justify-content: space-evenly;}
+      .imageArea img {padding:5px; border:1px solid black; margin-top:10px;
+          background-color:rgb(231, 219, 193); } 
+    </style>
   </head>
   <body>
 
