@@ -13,4 +13,4 @@
 
 #### Github repo: https://github.com/danielthorr/2019vor_forr-js/tree/master/Verkefni7
 
-#### Github pages: https://danielthorr.github.io/2019vor_forr-js/Verkefni7
+#### Github pages: https://danielthorr.github.io/2019vor_forr-js/Verkefni7/index.html
